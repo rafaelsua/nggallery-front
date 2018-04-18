@@ -1,0 +1,12 @@
+<!-- Para recibir la imagen/dato hay que hacer uso en ng-image-detail de @input -->
+<ng-image-detail [selectedImage]="selectedImage"></ng-image-detail>
+<div class="container">
+  <div class="row">
+    <!--  let image va a "image"
+          images 
+          click 
+          Output/ Input binding (output) = "accion" | (click) [input] (output)
+    -->
+    <ng-image *ngFor="let image of images" [image]="image" (click)="onSelect(image)"></ng-image>
+  </div>
+</div>
