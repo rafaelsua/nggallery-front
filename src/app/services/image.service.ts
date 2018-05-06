@@ -9,10 +9,13 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class ImageService {
 
-  constructor(private http:Http) { }
+  constructor(private http: Http) { }
 
   getImages(): Observable<Image[]>  {
-    return this.http.get('http://localhost:8080/image').map((response: Response) => response.json());
+    return this.http.get('http://localhost:8080/image').map((response: Response) => {
+      console.log('JSON' + response.json()._embedded.image);
+      return response.json()._embedded.image;
+    });
   }
 
 }
