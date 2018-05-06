@@ -12,6 +12,7 @@ import { ImageComponent } from './gallery/image-list/image.component';
 import { ImageDetailComponent } from './gallery/image-detail/image-detail.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AboutComponent } from './about/about.component';
     ImageComponent,
     ImageDetailComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    AdminComponent
   ],
   imports: [
     routes,
