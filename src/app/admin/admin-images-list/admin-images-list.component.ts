@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Image } from '../../models/image';
+import {ImageService} from '../../services/image.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'ng-admin-images-list',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminImagesListComponent implements OnInit {
 
-  constructor() { }
+  images: Observable<Image[]>;
+
+  constructor(private imageService: ImageService) { }
 
   ngOnInit() {
+    this.images = this.imageService.getImages();
   }
 
 }
